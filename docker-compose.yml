@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  dev:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    entrypoint: [ "/bin/bash" ]
+
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./:/app
+    entrypoint: [ "/app/bin/startup" ]
+    
