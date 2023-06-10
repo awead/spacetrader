@@ -4,6 +4,7 @@ services:
   web:
     environment:
       ST_TOKEN: ${ST_TOKEN:-}
+      ST_SYMBOL: ${ST_SYMBOL:-}
     build: .
     ports:
       - "3000:3000"

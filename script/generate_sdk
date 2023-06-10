@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SPEC="spacetraders_oaispec.json"
+
+rm -rf vendor/spacetradersrb
+
+openapi-generator generate \
+ -i ${SPEC} \
+ -g ruby \
+ -o vendor/spacetradersrb \
+ --additional-properties=gemName="spacetradersrb" \
+ --additional-properties=library="faraday" \
+ --additional-properties=moduleName="Spacetraders" \
+ --additional-properties=gemVersion=`jq -r '.info.version' ${SPEC}`
+

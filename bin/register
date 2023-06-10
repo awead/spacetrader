@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+APP_PATH = File.expand_path("../config/application", __dir__)
+require_relative "../config/boot"
+
+require "time"
+require "spacetradersrb"
+
+api_instance = Spacetraders::DefaultApi.new
+request = Spacetraders::RegisterRequest.new(
+  faction: ENV.fetch("ST_FACTION", "COSMIC"),
+  symbol: ENV.fetch("ST_SYMBOL")
+)
+
+begin
+  result = api_instance.register(register_request: request)
+  p result
+rescue Spacetraders::ApiError => e
+  puts "Error when calling DefaultApi->register: #{e}"
+end
