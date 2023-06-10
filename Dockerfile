@@ -1,14 +1,11 @@
 FROM ruby
 
-WORKDIR /app
-
-ENV PORT 3000
-
-EXPOSE $PORT
-
 RUN apt-get update -qq && apt-get install -y nodejs
 
-COPY . /app
+WORKDIR /app
+COPY Gemfile /app/Gemfile
+COPY Gemfile.lock /app/Gemfile.lock
 RUN gem install bundler
 RUN bundle install
+ENTRYPOINT [ "/app/bin/startup" ]
 

@@ -4,12 +4,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.2.2"
 
 gem "bootsnap", require: false
+gem "faraday"
 gem "importmap-rails"
 gem "jbuilder"
+gem "pg"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.5"
 gem "sprockets-rails"
-gem "sqlite3", "~> 1.4"
 gem "stimulus-rails"
 gem "turbo-rails"
 
@@ -24,6 +25,8 @@ end
 
 group :test do
   gem "capybara"
+  gem "rspec-its"
+  gem "rspec-rails"
   gem "selenium-webdriver"
   gem "webdrivers"
 end
