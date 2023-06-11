@@ -1,6 +1,6 @@
 FROM ruby
 
-RUN apt-get update -qq && apt-get install -y nodejs
+RUN apt-get update -qq && apt-get install -y nodejs vim
 
 WORKDIR /app
 COPY Gemfile /app/Gemfile

@@ -5,6 +5,7 @@ services:
     environment:
       ST_TOKEN: ${ST_TOKEN:-}
       ST_SYMBOL: ${ST_SYMBOL:-}
+      EDITOR: "/usr/bin/vim"
     build: .
     ports:
       - "3000:3000"
