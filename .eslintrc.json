@@ -1,0 +1,12 @@
+{
+  "root": true,
+  "extends": "react-app",
+  "overrides": [
+    {
+      "files": [
+        "app/javascript/*.ts",
+        "app/javascript/components/*.tsx"
+      ]
+    }
+  ]
+}
