@@ -1,15 +1,15 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-interface AppProps {
-  arg: string;
-}
+import Agent from "./agent";
 
-const App = ({ arg }: AppProps) => {
-  return <div>{`Hello, ${arg}!`}</div>;
+const App = () => {
+  return (
+    <div>
+      <h1>JSON Data Example</h1>
+      <Agent url="http://localhost:3000/agents/me" />
+    </div>
+  );
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  const rootEl = document.getElementById("root");
-  ReactDOM.render(<App arg="React front end" />, rootEl);
-});
+export default App;
