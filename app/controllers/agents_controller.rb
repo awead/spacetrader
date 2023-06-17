@@ -1,11 +1,15 @@
 class AgentsController < ActionController::API
   def show
-    render json: agent_api.get_my_agent.data.as_json
+    render json: myagent.data.as_json
   end
 
   private
 
-  def agent_api
-    @agent_api ||= Spacetraders::AgentsApi.new
+  def myagent
+    Rails.cache.fetch("myagent", expires_in: 12.hours) do
+      Spacetraders::AgentsApi
+        .new
+        .get_my_agent
+    end
   end
 end
