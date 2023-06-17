@@ -10,9 +10,7 @@ gem "jsbundling-rails"
 gem "pg"
 gem "puma", "~> 5.0"
 gem "rails", "~> 7.0.5"
-gem "sprockets-rails"
-gem "stimulus-rails"
-gem "turbo-rails"
+gem "redis"
 
 gem "spacetradersrb", path: "vendor/spacetradersrb"
 
