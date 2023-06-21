@@ -1,14 +1,35 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
-import Agent from "./agent";
+import Dataset from "./dataset";
 import Button from "./button";
+
+const Agent = () => {
+  return (
+    <Dataset url="http://localhost:3000/agents/me" />
+  )
+}
+
+const Ships = () => {
+  return (
+    <Dataset url="http://localhost:3000/systems/headquarters" />
+  )
+}
+
+const Board = () => {
+
+  return (
+    <div>
+      <Agent />
+      <Ships />
+    </div>
+  )
+}
 
 const App = () => {
   return (
     <div>
-      <h1>JSON Data Example</h1>
-      <Agent url="http://localhost:3000/agents/me" />
+      <Board />
       <Button />
     </div>
   );

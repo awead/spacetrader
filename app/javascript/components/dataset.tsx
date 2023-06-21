@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Agent = ({ url }) => {
+const Dataset = ({ url }) => {
   const [jsonData, setJsonData] = useState(null);
 
   useEffect(() => {
@@ -29,5 +29,5 @@ const Agent = ({ url }) => {
   );
 };
 
-export default Agent;
+export default Dataset;
 
