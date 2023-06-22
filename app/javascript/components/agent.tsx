@@ -1,7 +1,8 @@
+import * as ReactDOM from "react-dom";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Dataset = ({ url }) => {
+const Agent = ({ url }) => {
   const [jsonData, setJsonData] = useState(null);
 
   useEffect(() => {
@@ -23,11 +24,12 @@ const Dataset = ({ url }) => {
 
   return (
     <div>
-      {/* Render the JSON data */}
-      <pre>{JSON.stringify(jsonData, null, 2)}</pre>
+      <h2>{jsonData.symbol}</h2>
+      <p>credits: {jsonData.credits}</p>
+      <p>HQ: {jsonData.headquarters}</p>
     </div>
-  );
-};
+  )
+}
 
-export default Dataset;
+export default Agent
 

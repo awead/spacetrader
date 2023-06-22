@@ -1,15 +1,9 @@
 import * as React from "react"
 import * as ReactDOM from "react-dom"
 
-import Dataset from "./dataset"
+import Agent from "./agent"
 import Button from "./button"
 import SystemMap from "./system_map"
-
-const Agent = () => {
-  return (
-    <Dataset url="http://localhost:3000/agents/me" />
-  )
-}
 
 const Ships = () => {
   return (
@@ -21,8 +15,8 @@ const Board = () => {
   return (
     <div className="grid">
       <div className="col">
-        <div className="text-center p-3 border-round-sm bg-primary font-bold">
-          <Agent />
+        <div className="p-2 border-white-500 surface-overlay border-3 border-round text-white font-bold">
+          <Agent url="http://localhost:3000/agents/me"/>
         </div>
       </div>
       <div className="col">
