@@ -9,4 +9,3 @@ RSpec.describe "Systems", type: :request do
     it { is_expected.to be_successful }
   end
 end
-

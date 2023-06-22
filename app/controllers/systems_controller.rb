@@ -12,7 +12,7 @@ class SystemsController < ActionController::API
         .get_my_agent
     end
   end
-  
+
   def myheadquarters
     Rails.cache.fetch("myheadquarters", expires_in: 12.hours) do
       Spacetraders::SystemsApi
