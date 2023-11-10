@@ -20,7 +20,7 @@ const Board = () => {
         </div>
       </div>
       <div className="col">
-        <div className="text-center p-3 border-round-sm bg-primary font-bold">
+        <div className="text-center p-3 border-round-sm font-bold">
           <SystemMap url="http://localhost:3000/systems/headquarters" />
         </div>
       </div>

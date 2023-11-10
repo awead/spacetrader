@@ -23,11 +23,9 @@ const Agent = ({ url }) => {
   }
 
   return (
-    <div>
       <h2>{jsonData.symbol}</h2>
       <p>credits: {jsonData.credits}</p>
       <p>HQ: {jsonData.headquarters}</p>
-    </div>
   )
 }
 

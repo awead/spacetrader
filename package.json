@@ -9,7 +9,7 @@
     "yarn": "^1.22.19"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --loader:.png=dataurl --sourcemap --outdir=public/assets --public-path=/assets"
+    "build": "esbuild app/javascript/*.* --bundle --loader:.png=dataurl --loader:.jpg=dataurl --sourcemap --outdir=public/assets --public-path=/assets"
   },
   "devDependencies": {
     "eslint": "^8.42.0",

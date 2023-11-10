@@ -2,6 +2,16 @@ import * as ReactDOM from "react-dom"
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { Image } from 'primereact/image';
+
+
+import asteroidImage from "../images/asteroid.png";
+import gasGiantImage from "../images/gas_giant.png";
+import gateImage from "../images/gate.png";
+import lunaImage from "../images/luna.png";
+import planetImage from "../images/planet.png";
+import stationImage from "../images/station.png";
+
 const System = ({ children }) => {
   const systemContainerStyle = {
     display: "grid",
@@ -15,26 +25,128 @@ const System = ({ children }) => {
 
 const Region = ({ x, y, children }) => {
   const sectorStyle = {
-    backgroundColor: "lightgray",
-    padding: "10px",
     gridColumn: `calc(${x} + 2)`,
     gridRow: `calc(${y} + 2)`
   };
 
   return (
-    <div style={sectorStyle}>
+    <div className="bg-black font-bold" style={sectorStyle}>
       {children}
     </div>
   );
 };
 
-const Waypoint = ({ symbol, waypointType }) => {
+const GasGiant = ({}) => {
   return (
-    <span>
-      {symbol}, {waypointType}
-    </span>
+    <div style={{ 
+      width: "200px",
+      height: "200px",
+      background: `url(${gasGiantImage})` + "no-repeat center center",
+      backgroundSize: "cover",
+      position: "relative"
+    }}>
+    </div>
   )
 }
+
+const Planet = ({}) => {
+  return (
+    <Image src={planetImage} alt="Planet image" width="100" />
+  )
+}
+
+const Moon = ({}) => {
+  return (
+    // <div style={{ 
+    //   width: "50",
+    //   height: "50",
+    //   background: `url(${lunaImage})` + "no-repeat center center",
+    //   backgroundSize: "cover",
+    //   position: "absolute",
+    //   top: "20%",
+    //   left: "60%"
+    // }}>
+    // </div>
+    <span>moon</span>
+  )
+}
+
+
+const Station = ({}) => {
+  return (
+    <div style={{ 
+      width: "50px",
+      height: "50px",
+      background: `url(${stationImage})` + "no-repeat center center",
+      backgroundSize: "cover",
+      position: "relative",
+      // top: "20%",
+      // left: "60%"
+    }}>
+    </div>
+  )
+}
+
+const Asteriod = ({}) => {
+  return (
+    <div style={{ 
+      width: "200px",
+      height: "200px",
+      background: `url(${asteroidImage})` + "no-repeat center center",
+      backgroundSize: "cover",
+      position: "relative"
+    }}>
+    </div>
+  )
+}
+
+const Gate = ({}) => {
+  return (
+    <div style={{ 
+      width: "50px",
+      height: "50px",
+      background: `url(${gateImage})` + "no-repeat center center",
+      backgroundSize: "cover",
+      position: "relative"
+    }}>
+    </div>
+  )
+}
+
+const Waypoint = ({ symbol, waypointType }) => {
+  console.log(waypointType)
+  switch(waypointType) {
+    case "GAS_GIANT":
+      return (
+        <GasGiant /> 
+      ) 
+    case "PLANET":
+      return (
+        <Planet /> 
+      ) 
+    case "MOON":
+      return (
+        <Moon /> 
+      ) 
+    case "ORBITAL_STATION":
+      return (
+        <Station /> 
+      ) 
+    case "ASTEROID_FIELD":
+      return (
+        <Asteriod /> 
+      ) 
+    case "JUMP_GATE":
+      return (
+        <Gate /> 
+      ) 
+    default:
+      return (
+        <span>Unknown</span>
+      )
+  }
+}
+
 
 interface WaypointEntry {
   symbol: string
